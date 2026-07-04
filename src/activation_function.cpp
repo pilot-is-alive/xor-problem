@@ -9,3 +9,7 @@ float ActivationFunction::sigmoid(float input) {
 float ActivationFunction::relu(float input) {
     return (input > 0.0f? input: 0.0f);
 }
+
+float ActivationFunction::leakyRelu(float input) {
+    return (input > 0.0f? input: (0.01f)*input);
+}

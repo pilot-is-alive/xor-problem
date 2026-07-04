@@ -12,6 +12,7 @@ class ActivationFunction {
     public:
         static float sigmoid(float input);
         static float relu(float input);
+        static float leakyRelu(float input);
 };
 
 #endif
