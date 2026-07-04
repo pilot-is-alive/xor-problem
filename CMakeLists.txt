@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(xor 
     src/main.cpp 
+    src/node.cpp
     src/activation_function.cpp
 )
 
