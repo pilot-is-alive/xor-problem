@@ -9,6 +9,7 @@ add_executable(xor
     src/main.cpp 
     src/node.cpp
     src/activation_function.cpp
+    src/layer.cpp
 )
 
 target_include_directories(xor PUBLIC include)
