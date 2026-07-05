@@ -28,6 +28,11 @@ float Node::output() {
 void Node::loadInputs(vector<float>& newInputs) {
     currentInputs = newInputs;
 }
+
+void Node::addWeight(float newWeight) {
+    currentWeights.push_back(newWeight);
+}
+
 void Node::loadBias(float newBias) {
     bias = newBias;
 }

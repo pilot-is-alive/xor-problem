@@ -19,6 +19,8 @@ class Node {
         float summation();
 
     public:
+        void addWeight(float newWeight);
+
         void loadInputs(vector<float>& newInputs);
         void loadBias(float newBias);
         void loadActivationFunction(afs newActivationFunction);
