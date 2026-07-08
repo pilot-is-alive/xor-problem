@@ -11,11 +11,20 @@ Layer::Layer(int numOfNodes, afs activationFunction, int numOfInputs) {
 }
 
 Layer::Layer(int numOfNodes, Layer& newPreviousLayer) {
+    previousLayer = &newPreviousLayer;
     chosenActivationFunction  = newPreviousLayer.getActivationFunction();
     currentInputs.clear();
     currentInputs = newPreviousLayer.outputs();
 
     addNode(numOfNodes);
+}
+
+void Layer::loadNextLayer(Layer* newNextLayer) {
+    nextLayer = newNextLayer;
+}
+
+void Layer::loadPreviousLayerNextLayer() {
+    previousLayer->loadNextLayer(this);
 }
 
 void Layer::addNode(int num) {
