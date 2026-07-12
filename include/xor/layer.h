@@ -12,7 +12,7 @@ class Layer {
         Layer* previousLayer = nullptr;
         Layer* nextLayer = nullptr;
 
-        vector<float> currentInputs;
+        vector<float>& currentInputs;
         vector<Node> nodes;
         vector<float> currentOutputs;
 
@@ -23,8 +23,8 @@ class Layer {
         void loadPreviousLayerNextLayer();
         void addNode(int num);
     public:
-        Layer();
-        Layer(int numOfNodes, afs activationFunction, int numOfInputs);
+        Layer() = delete;
+        Layer(int numOfNodes, afs activationFunction, int numOfInputs, vector<float> initInputs);
         Layer(int numOfNodes, Layer& newPreviousLayer);
 
         void loadNextLayer(Layer* newNextLayer);
@@ -33,7 +33,7 @@ class Layer {
         void loadActivationFunction(afs newActivationFunction);
         afs getActivationFunction();
         int getNumOfNodes();
-        vector<float> outputs();
+        vector<float>& outputs();
         ~Layer();
 
 };

@@ -1,16 +1,14 @@
 #include "xor/layer.h"
 
-Layer::Layer() {
-    
-}
 
-
-Layer::Layer(int numOfNodes, afs activationFunction, int numOfInputs) {
+Layer::Layer(int numOfNodes, afs activationFunction, int numOfInputs, vector<float> initInputs)
+    : currentInputs(initInputs) {
     chosenActivationFunction  = activationFunction;
     currentInputs.assign(numOfInputs, 0);
 }
 
-Layer::Layer(int numOfNodes, Layer& newPreviousLayer) {
+Layer::Layer(int numOfNodes, Layer& newPreviousLayer)
+    : currentInputs(newPreviousLayer.outputs()) {
     previousLayer = &newPreviousLayer;
     chosenActivationFunction  = newPreviousLayer.getActivationFunction();
     currentInputs.clear();
@@ -57,7 +55,7 @@ afs Layer::getActivationFunction() {
     return chosenActivationFunction;
 }
 
-vector<float> Layer::outputs() {
+vector<float>& Layer::outputs() {
     currentOutputs.clear();
 
     for (Node& node: nodes) {
