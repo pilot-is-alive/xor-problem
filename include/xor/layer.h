@@ -34,7 +34,7 @@ class Layer {
         afs getActivationFunction();
         int getNumOfNodes();
         vector<float>& outputs();
-        ~Layer();
+        ~Layer() = default;
 
 };
 
