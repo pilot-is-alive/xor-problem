@@ -4,7 +4,9 @@ float Node::summation() {
     float sum = 0.0f;
     for (size_t i = 0; i < currentInputs.size(); i++) {
         sum += ( currentWeights.at(i) * currentInputs.at(i)); 
-    } 
+    }
+
+    return sum;
 }
 
 float Node::output() {
