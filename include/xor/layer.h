@@ -4,6 +4,7 @@
 #include <vector>
 #include "xor/node.h"
 #include "xor/random_number.h"
+#include <iostream>
 
 using namespace std;
 
@@ -34,6 +35,7 @@ class Layer {
         afs getActivationFunction();
         int getNumOfNodes();
         vector<float>& outputs();
+        void printOutputs();
         ~Layer() = default;
 
 };

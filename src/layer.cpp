@@ -11,7 +11,7 @@ Layer::Layer(int numOfNodes, Layer& newPreviousLayer)
     : currentInputs(newPreviousLayer.outputs()) {
     previousLayer = &newPreviousLayer;
     chosenActivationFunction  = newPreviousLayer.getActivationFunction();
-    currentInputs.clear();
+    currentInputs.clear(); // TODO: remove this
     currentInputs = newPreviousLayer.outputs();
 
     addNode(numOfNodes);
@@ -63,4 +63,14 @@ vector<float>& Layer::outputs() {
     }
 
     return currentOutputs;
+}
+
+void Layer::printOutputs() {
+    if (currentOutputs.empty()) cout << "EMPTY OUTPUT\n";
+    else {
+        cout << "outputs: ";
+        for (const float& output: currentOutputs) {
+            cout << output << ", ";
+        }
+    }
 }
