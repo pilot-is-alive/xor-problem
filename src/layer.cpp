@@ -11,8 +11,6 @@ Layer::Layer(int numOfNodes, Layer& newPreviousLayer)
     : currentInputs(newPreviousLayer.outputs()) {
     previousLayer = &newPreviousLayer;
     chosenActivationFunction  = newPreviousLayer.getActivationFunction();
-    currentInputs.clear(); // TODO: remove this
-    currentInputs = newPreviousLayer.outputs();
 
     addNode(numOfNodes);
 }
