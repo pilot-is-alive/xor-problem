@@ -10,7 +10,7 @@ using namespace std;
 class Node {
     private:
         float bias = 0.0;
-        vector<float> currentInputs;
+        vector<float>& currentInputs;
         vector<float> currentWeights;
         ActivationFunction activationFunction;
         afs chosenActivationFunction;
