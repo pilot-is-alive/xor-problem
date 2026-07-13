@@ -37,6 +37,8 @@ void Layer::addNode(int num) {
         newNode.loadInputs(currentInputs);
 
         newNode.loadActivationFunction(chosenActivationFunction);
+
+        nodes.push_back(newNode);
     }
 }
 
